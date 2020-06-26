@@ -19,7 +19,7 @@ save_as_icon = tk.PhotoImage(file ='icons2/save_as.png')
 exit_icon = tk.PhotoImage(file ='icons2/exit.png')
 file = tk.Menu(main_menu, tearoff= False)
 
-file.add_command(label ="New", image=new_icon)
+file.add_command(label ="New", image=new_icon, compound=tk.LEFT)
 
 edit = tk.Menu(main_menu, tearoff= False)
 view = tk.Menu(main_menu, tearoff= False)
