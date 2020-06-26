@@ -11,6 +11,7 @@ main_application.title('SaniText text editor')
 
 ###################################### main menu ########################################
 main_menu = tk.Menu()
+#file menu
 #file menu icons
 new_icon = tk.PhotoImage(file ='icons2/new.png')
 open_icon = tk.PhotoImage(file ='icons2/open.png')
@@ -25,8 +26,17 @@ file.add_command(label ="Save", image=save_icon, compound=tk.LEFT, accelerator =
 file.add_command(label ="Save As", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+S')
 file.add_command(label ="Exit", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Q')
 
+#edit menu
+#edit icons
+copy_icon = tk.PhotoImage(file ='icons2/copy.png')
+paste_icon = tk.PhotoImage(file ='icons2/paste.png')
+cut_icon = tk.PhotoImage(file ='icons2/cut.png')
+clear_all_icon = tk.PhotoImage(file ='icons2/clear_all.png')
+find_icon = tk.PhotoImage(file ='icons2/find.png')
 
 edit = tk.Menu(main_menu, tearoff= False)
+
+
 view = tk.Menu(main_menu, tearoff= False)
 color_theme = tk.Menu(main_menu, tearoff= False)
 
