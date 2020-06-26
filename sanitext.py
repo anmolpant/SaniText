@@ -35,6 +35,13 @@ clear_all_icon = tk.PhotoImage(file ='icons2/clear_all.png')
 find_icon = tk.PhotoImage(file ='icons2/find.png')
 
 edit = tk.Menu(main_menu, tearoff= False)
+edit.add_command(label ="Copy", image=copy_icon, compound=tk.LEFT, accelerator = 'Ctrl+C')
+edit.add_command(label ="Paste", image=paste_icon, compound=tk.LEFT, accelerator = 'Ctrl+V')
+edit.add_command(label ="Cut", image=cut_icon, compound=tk.LEFT, accelerator = 'Ctrl+X')
+edit.add_command(label ="Clear All", image=clear_all_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+X')
+edit.add_command(label ="Find", image=find_icon, compound=tk.LEFT, accelerator = 'Ctrl+F')
+
+
 
 
 view = tk.Menu(main_menu, tearoff= False)
