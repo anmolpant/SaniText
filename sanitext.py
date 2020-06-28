@@ -42,9 +42,15 @@ edit.add_command(label ="Clear All", image=clear_all_icon, compound=tk.LEFT, acc
 edit.add_command(label ="Find", image=find_icon, compound=tk.LEFT, accelerator = 'Ctrl+F')
 
 
+#### view icons #####
+tool_bar_icon = tk.PhotoImage(file = 'icons2/tool_bar.png')
+status_bar_icon = tk.PhotoImage(file = 'icons2/status_bar.png')
 
 
 view = tk.Menu(main_menu, tearoff= False)
+view.add_checkbutton(label='Tool Bar', image = tool_bar_icon, compound=tk.LEFT)
+view.add_checkbutton(label='Status Bar', image = status_bar_icon, compound=tk.LEFT)
+
 color_theme = tk.Menu(main_menu, tearoff= False)
 
 # cascade
