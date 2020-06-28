@@ -74,7 +74,7 @@ color_dict = {
 count = 0
 for i in color_dict:
     color_theme.add_radiobutton(label = i, image = color_icons[count], variable=theme_choice, compound = tk.LEFT)
-
+    count = count+1
 
 # cascade
 
