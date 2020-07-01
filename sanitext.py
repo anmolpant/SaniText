@@ -20,11 +20,7 @@ save_as_icon = tk.PhotoImage(file ='icons2/save_as.png')
 exit_icon = tk.PhotoImage(file ='icons2/exit.png')
 file = tk.Menu(main_menu, tearoff= False)
 
-file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N')
-file.add_command(label ="Open", image=open_icon, compound=tk.LEFT, accelerator = 'Ctrl+O')
-file.add_command(label ="Save", image=save_icon, compound=tk.LEFT, accelerator = 'Ctrl+S')
-file.add_command(label ="Save As", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+S')
-file.add_command(label ="Exit", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Q')
+
 
 #edit menu
 #edit icons
@@ -35,19 +31,14 @@ clear_all_icon = tk.PhotoImage(file ='icons2/clear_all.png')
 find_icon = tk.PhotoImage(file ='icons2/find.png')
 
 edit = tk.Menu(main_menu, tearoff= False)
-edit.add_command(label ="Copy", image=copy_icon, compound=tk.LEFT, accelerator = 'Ctrl+C')
-edit.add_command(label ="Paste", image=paste_icon, compound=tk.LEFT, accelerator = 'Ctrl+V')
-edit.add_command(label ="Cut", image=cut_icon, compound=tk.LEFT, accelerator = 'Ctrl+X')
-edit.add_command(label ="Clear All", image=clear_all_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+X')
-edit.add_command(label ="Find", image=find_icon, compound=tk.LEFT, accelerator = 'Ctrl+F')
+
 
 
 #### view icons #####
 tool_bar_icon = tk.PhotoImage(file = 'icons2/tool_bar.png')
 status_bar_icon = tk.PhotoImage(file = 'icons2/status_bar.png')
 view = tk.Menu(main_menu, tearoff= False)
-view.add_checkbutton(label='Tool Bar', image = tool_bar_icon, compound=tk.LEFT)
-view.add_checkbutton(label='Status Bar', image = status_bar_icon, compound=tk.LEFT)
+
 
 ### color theme ######
 light_default_icon = tk.PhotoImage(file='icons2/light_default.png')
@@ -71,10 +62,7 @@ color_dict = {
     'Night Blue' : ('#ededed', '#6b9dc2')
 }
 
-count = 0
-for i in color_dict:
-    color_theme.add_radiobutton(label = i, image = color_icons[count], variable=theme_choice, compound = tk.LEFT)
-    count = count+1
+
 
 # cascade
 
@@ -98,6 +86,31 @@ main_menu.add_cascade(label='Color Theme', menu=color_theme)
 #------------------------------------ end status bar ------------------------------------#
 
 ###################################### main menu functionality ########################################
+
+## file commands
+file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N')
+file.add_command(label ="Open", image=open_icon, compound=tk.LEFT, accelerator = 'Ctrl+O')
+file.add_command(label ="Save", image=save_icon, compound=tk.LEFT, accelerator = 'Ctrl+S')
+file.add_command(label ="Save As", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+S')
+file.add_command(label ="Exit", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Q')
+
+## edit commands
+edit.add_command(label ="Copy", image=copy_icon, compound=tk.LEFT, accelerator = 'Ctrl+C')
+edit.add_command(label ="Paste", image=paste_icon, compound=tk.LEFT, accelerator = 'Ctrl+V')
+edit.add_command(label ="Cut", image=cut_icon, compound=tk.LEFT, accelerator = 'Ctrl+X')
+edit.add_command(label ="Clear All", image=clear_all_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+X')
+edit.add_command(label ="Find", image=find_icon, compound=tk.LEFT, accelerator = 'Ctrl+F')
+
+## view check buttons
+view.add_checkbutton(label='Tool Bar', image = tool_bar_icon, compound=tk.LEFT)
+view.add_checkbutton(label='Status Bar', image = status_bar_icon, compound=tk.LEFT)
+
+##color theme
+
+count = 0
+for i in color_dict:
+    color_theme.add_radiobutton(label = i, image = color_icons[count], variable=theme_choice, compound = tk.LEFT)
+    count = count+1
 
 #------------------------------------ end main menu functionality ------------------------------------#
 
