@@ -101,10 +101,15 @@ bold_icon = tk.PhotoImage(file='icons2/bold.png')
 bold_btn = ttk.Button(tool_bar, image=bold_icon)
 bold_btn.grid(row=0, column=2, padx=5)
 
-
+##italic button
 italic_icon = tk.PhotoImage(file='icons2/italic.png')
-underline_icon = tk.PhotoImage(file='icons2/underline.png')
+italic_btn = ttk.Button(tool_bar, image=italic_icon)
+italic_btn.grid(row=0, column=4, padx=5)
 
+##underline button
+underline_icon = tk.PhotoImage(file='icons2/underline.png')
+underline_btn = ttk.Button(tool_bar, image=underline_icon)
+underline_btn.grid(row=0, column=5, padx=5)
 
 
 ###################################### text editor ########################################
