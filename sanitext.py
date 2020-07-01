@@ -96,6 +96,17 @@ font_size['values'] = tuple(range(8,81))
 font_size.current(4)
 font_size.grid(row=0, column=1, padx=5)
 
+##bold button
+bold_icon = tk.PhotoImage(file='icons2/bold.png')
+bold_btn = ttk.Button(tool_bar, image=bold_icon)
+bold_btn.grid(row=0, column=2, padx=5)
+
+
+italic_icon = tk.PhotoImage(file='icons2/italic.png')
+underline_icon = tk.PhotoImage(file='icons2/underline.png')
+
+
+
 ###################################### text editor ########################################
 
 #------------------------------------ end text editor ------------------------------------#
