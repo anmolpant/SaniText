@@ -77,6 +77,11 @@ main_menu.add_cascade(label='Color Theme', menu=color_theme)
 
 #------------------------------------ end toolbar ------------------------------------#
 
+font_tuples = tk.font.families()
+font_family = tk.StringVar()
+font_box = ttk.Combobox
+
+
 ###################################### text editor ########################################
 
 #------------------------------------ end text editor ------------------------------------#
