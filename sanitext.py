@@ -5,7 +5,7 @@ import os
 
 main_application = tk.Tk()
 main_application.geometry('1200x800')
-main_application.title('SaniText text editor')
+main_application.title('SaniText Text Editor')
 
 
 
@@ -150,6 +150,9 @@ text_editor.config(yscrollcommand= scroll_bar.set)
 #------------------------------------ end text editor ------------------------------------#
 
 ###################################### status bar ########################################
+
+status_bar = ttk.Label(main_application, text ='SaniText Text Editor - Copyright © 2020 Anmol Pant')
+status_bar.pack(side=tk.BOTTOM)
 
 #------------------------------------ end status bar ------------------------------------#
 
