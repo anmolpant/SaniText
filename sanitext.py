@@ -137,6 +137,18 @@ align_right_btn.grid(row=0, column=8, padx=5)
 
 ###################################### text editor ########################################
 
+text_editor = tk.Text(main_application)
+text_editor.config(wrap='word', relief = tk.FLAT)
+
+scroll_bar = tk.Scrollbar(main_application)
+text_editor.focus_set()
+text_editor.pack(fill = tk.BOTH, expand=True)
+scroll_bar.config(command = text_editor.yview)
+text_editor.config(yscrollcommand= scroll_bar.set)
+
+
+
+
 #------------------------------------ end text editor ------------------------------------#
 
 ###################################### status bar ########################################
