@@ -75,7 +75,7 @@ main_menu.add_cascade(label='Color Theme', menu=color_theme)
 
 ###################################### toolbar ########################################
 
-#------------------------------------ end toolbar ------------------------------------#
+
 
 tool_bar = ttk.Label(main_application)
 tool_bar.pack(side = tk.TOP, fill = tk.X)
@@ -131,6 +131,8 @@ align_center_btn.grid(row=0, column=7, padx=5)
 align_right_icon = tk.PhotoImage(file='icons2/align_right.png')
 align_right_btn = ttk.Button(tool_bar, image=align_right_icon)
 align_right_btn.grid(row=0, column=8, padx=5)
+
+#------------------------------------ end toolbar ------------------------------------#
 
 
 ###################################### text editor ########################################
