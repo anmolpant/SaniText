@@ -157,8 +157,13 @@ def change_font(main_application):
     current_font_family = font_family.get()
     text_editor.configure(font=(current_font_family, current_font_size))
 
-font_box.bind("<<ComboboxSelected>>", change_font)
+def change_fontsize(main_application):
+    global current_font_family
+    current_font_size = size_variable.get()
+    text_editor.configure(font=(current_font_family, current_font_size))
 
+font_box.bind("<<ComboboxSelected>>", change_font)
+font_size.bind("<<ComboboxSelected>>", change_fontsize)
 
 text_editor.configure(font=("Arial", 12))
 
