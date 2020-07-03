@@ -158,7 +158,7 @@ def change_font(main_application):
     text_editor.configure(font=(current_font_family, current_font_size))
 
 def change_fontsize(main_application):
-    global current_font_family
+    global current_font_size
     current_font_size = size_variable.get()
     text_editor.configure(font=(current_font_family, current_font_size))
 
