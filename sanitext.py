@@ -196,12 +196,15 @@ def change_underline():
     if text_property.actual()['underline'] == 1:
         text_editor.configure(font=(current_font_family, current_font_size, 'normal'))
 underline_btn.configure(command=change_underline)
-
-
 #text_property = tk.font.Font(font=text_editor['font']).actual()
 
+## font color functionality 
+def change_font_color():
+    color_var = tk.colorchooser.askcolor()
+    text_editor.configure(fg=color_var[1])
 
 
+font_color_btn.configure(command=change_font_color)
 
 text_editor.configure(font=("Arial", 12))
 
