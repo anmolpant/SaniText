@@ -184,8 +184,19 @@ def change_italic():
     if text_property.actual()['slant'] == 'roman':
         text_editor.configure(font=(current_font_family, current_font_size, 'italic'))
     if text_property.actual()['slant'] == 'italic':
-        text_editor.configure(font=(current_font_family, current_font_size, 'roman'))
+        text_editor.configure(font=(current_font_family, current_font_size, 'normal'))
 italic_btn.configure(command=change_italic)
+
+
+#underline functionality
+def change_underline():
+    text_property = tk.font.Font(font=text_editor['font'])
+    if text_property.actual()['underline'] == 0:
+        text_editor.configure(font=(current_font_family, current_font_size, 'underline'))
+    if text_property.actual()['underline'] == 1:
+        text_editor.configure(font=(current_font_family, current_font_size, 'normal'))
+underline_btn.configure(command=change_underline)
+
 
 #text_property = tk.font.Font(font=text_editor['font']).actual()
 
