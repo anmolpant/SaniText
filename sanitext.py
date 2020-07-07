@@ -267,9 +267,24 @@ def new_file(event=None):
     url = ''
     text_editor.delete(1.0,tk.END)
 
+##open functionality
+
+def open_file(event=None):
+    global url
+    url = filedialog.askopenfilename(initialdir=os.getcwd(), title='Select File', filetypes=(('Text File','*.txt'), ('All files','*.*')))
+    try:
+        with open(url,'r') as fr:
+            text_editor.delete(1.0, tk.END)
+            text_editor.insert(1.0, fr.read())
+    except FileNotFoundError:
+        return
+    except:
+        return
+    main_application.title(os.path.basename(url))
+
 ## file commands
 file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N', command = new_file)
-file.add_command(label ="Open", image=open_icon, compound=tk.LEFT, accelerator = 'Ctrl+O')
+file.add_command(label ="Open", image=open_icon, compound=tk.LEFT, accelerator = 'Ctrl+O', command = open_file)
 file.add_command(label ="Save", image=save_icon, compound=tk.LEFT, accelerator = 'Ctrl+S')
 file.add_command(label ="Save As", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+S')
 file.add_command(label ="Exit", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Q')
