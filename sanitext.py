@@ -248,7 +248,7 @@ def changed(event=None):
         words = len(text_editor.get(1.0,'end-1c').split())
         characters = len(text_editor.get(1.0,'end-1c'))
         status_bar.config(text=f'Characters : {characters} Words : {words}')
-
+    text_editor.edit_modified(False)
 text_editor.bind('<<Modified>>', changed)
 
 #------------------------------------ end status bar ------------------------------------#
