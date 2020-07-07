@@ -258,8 +258,17 @@ text_editor.bind('<<Modified>>', changed)
 
 ###################################### main menu functionality ########################################
 
+## variable
+url = ''
+
+## new functionality
+def new_file(event=None):
+    global url
+    url = ''
+    text_editor.delete(1.0,tk.END)
+
 ## file commands
-file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N')
+file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N', command = new_file)
 file.add_command(label ="Open", image=open_icon, compound=tk.LEFT, accelerator = 'Ctrl+O')
 file.add_command(label ="Save", image=save_icon, compound=tk.LEFT, accelerator = 'Ctrl+S')
 file.add_command(label ="Save As", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+S')
