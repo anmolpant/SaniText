@@ -243,6 +243,14 @@ text_editor.configure(font=("Arial", 12))
 status_bar = ttk.Label(main_application, text ='SaniText Text Editor - Copyright © 2020 Anmol Pant')
 status_bar.pack(side=tk.BOTTOM)
 
+def changed(event=None):
+    if text_editor.edit_modified():
+        words = len(text_editor.get(1.0,'end-1c').split())
+        characters = len(text_editor.get(1.0,'end-1c'))
+        status_bar.config(text=f'Characters : {characters} Words : {words}')
+
+text_editor.bind('<<Modified>>', changed)
+
 #------------------------------------ end status bar ------------------------------------#
 
 ###################################### main menu functionality ########################################
