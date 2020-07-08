@@ -248,10 +248,12 @@ text_changed = False
 def changed(event=None):
     if text_editor.edit_modified():
         global text_changed
-        words = len(text_editor.get(1.0,'end-1c').split())
-        characters = len(text_editor.get(1.0,'end-1c'))
-        status_bar.config(text=f'Characters : {characters} Words : {words}')
-    text_editor.edit_modified(False)
+        if text_editor.edit_modified():
+            text_changed = True
+            words = len(text_editor.get(1.0,'end-1c').split())
+            characters = len(text_editor.get(1.0,'end-1c'))
+            status_bar.config(text=f'Characters : {characters} Words : {words}')
+        text_editor.edit_modified(False)
 text_editor.bind('<<Modified>>', changed)
 
 #------------------------------------ end status bar ------------------------------------#
@@ -313,24 +315,35 @@ def save_as(event=None):
 ## exit functionality
 
 def exit_func(event=None):
-    global url, text_changed
+    global url
     try:
         if text_changed:
-            mbox=messagebox.askyesnocancel('Warning','Do you want to save the file ?')
+            mbox = messagebox.askyesnocancel('Warning', 'Do you want to save the file ?')
             if mbox is True:
                 if url:
                     content = text_editor.get(1.0, tk.END)
-                    with open(url,'w', encoding='utf-8') as fw:
+                    with open(url, 'w', encoding='utf-8') as fw:
                         fw.write(content)
                         main_application.destroy()
-
+                else:
+                    content2 = str(text_editor.get(1.0, tk.END))
+                    url = filedialog.asksaveasfile(mode = 'w', defaultextension='.txt', filetypes=(('Text File', '*.txt'), ('All files', '*.*')))
+                    url.write(content2)
+                    url.close()
+                    main_application.destroy()
+            elif mbox is False:
+                main_application.destroy()
+        else:
+            main_application.destroy()
+    except:
+        return
 
 ## file commands
 file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N', command = new_file)
 file.add_command(label ="Open", image=open_icon, compound=tk.LEFT, accelerator = 'Ctrl+O', command = open_file)
 file.add_command(label='Save', image=save_icon, compound=tk.LEFT, accelerator='Ctrl+S', command = save_file)
 file.add_command(label ="Save As", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+S', command = save_as)
-file.add_command(label ="Exit", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+Q')
+file.add_command(label='Exit', image=exit_icon, compound=tk.LEFT, accelerator='Ctrl+Q', command=exit_func)
 
 ## edit commands
 edit.add_command(label ="Copy", image=copy_icon, compound=tk.LEFT, accelerator = 'Ctrl+C')
