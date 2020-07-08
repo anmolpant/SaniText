@@ -310,6 +310,20 @@ def save_as(event=None):
     except:
         return
 
+## exit functionality
+
+def exit_func(event=None):
+    global url, text_changed
+    try:
+        if text_changed:
+            mbox=messagebox.askyesnocancel('Warning','Do you want to save the file ?')
+            if mbox is True:
+                if url:
+                    content = text_editor.get(1.0, tk.END)
+                    with open(url,'w', encoding='utf-8') as fw:
+                        fw.write(content)
+                        main_application.destroy()
+
 
 ## file commands
 file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N', command = new_file)
