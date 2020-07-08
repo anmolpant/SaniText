@@ -315,7 +315,7 @@ def save_as(event=None):
 ## exit functionality
 
 def exit_func(event=None):
-    global url
+    global url, text_changed
     try:
         if text_changed:
             mbox = messagebox.askyesnocancel('Warning', 'Do you want to save the file ?')
