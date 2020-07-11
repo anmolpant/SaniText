@@ -348,7 +348,22 @@ def find_func(event = None):
     find_dialogue.title('Find')
     find_dialogue.resizable(0,0)
 
-    
+    # frame
+    find_frame = ttk.LabelFrame(find_dialogue, text='Find/Replace')
+    find_frame.pack(pady=20)
+
+    #labels
+    text_find_label = ttk.Label(find_frame, text = 'Find : ')
+    text_replace_label = ttk.Label(find_frame, text = "Replace")
+
+    ### entry boxes
+    find_input = ttk.Entry(find_frame, width = 30)
+    replace_input = ttk.Entry(find_frame, width=30)
+
+    ## button
+    find_button = ttk.Button(find_frame, text=Find, command=find)
+    replace_button = ttk.Button(find_frame, text='Replace', command=replace)
+
 
 ## file commands
 file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N', command = new_file)
