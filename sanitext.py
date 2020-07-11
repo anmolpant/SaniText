@@ -338,6 +338,18 @@ def exit_func(event=None):
     except:
         return
 
+
+
+############## find functionality ###########
+
+def find_func(event = None):
+    find_dialogue = tk.Toplevel()
+    find_dialogue.geometry = ('450X250+500+200')
+    find_dialogue.title('Find')
+    find_dialogue.resizable(0,0)
+
+    
+
 ## file commands
 file.add_command(label ="New", image=new_icon, compound=tk.LEFT, accelerator = 'Ctrl+N', command = new_file)
 file.add_command(label ="Open", image=open_icon, compound=tk.LEFT, accelerator = 'Ctrl+O', command = open_file)
@@ -350,7 +362,7 @@ edit.add_command(label ="Copy", image=copy_icon, compound=tk.LEFT, accelerator =
 edit.add_command(label ="Paste", image=paste_icon, compound=tk.LEFT, accelerator = 'Ctrl+V',command = lambda:text_editor.event_generate("<Control v>"))
 edit.add_command(label ="Cut", image=cut_icon, compound=tk.LEFT, accelerator = 'Ctrl+X', command = lambda:text_editor.event_generate("<Control x>"))
 edit.add_command(label ="Clear All", image=clear_all_icon, compound=tk.LEFT, accelerator = 'Ctrl+Alt+X', command = lambda:text_editor.delete(1.0, tk.END))
-edit.add_command(label ="Find", image=find_icon, compound=tk.LEFT, accelerator = 'Ctrl+F')
+edit.add_command(label ="Find", image=find_icon, compound=tk.LEFT, accelerator = 'Ctrl+F', command = find_func)
 
 ## view check buttons
 view.add_checkbutton(label='Tool Bar', image = tool_bar_icon, compound=tk.LEFT)
