@@ -426,7 +426,17 @@ show_toolbar = tk.BooleanVar()
 show_toolbar.set(True)
 
 def hide_toolbar():
-    pass
+    global show_toolbar
+    if show_toolbar:
+        tool_bar.pack_forget()
+        show_toolbar = False
+    else:
+        text_editor.pack_forget()
+        status_bar.pack_forget()
+        tool_bar.pack(side=TK.TOP, fill = tk.X)
+        text_editor.pack(fill=tk.BOTH, expand=True)
+        status_bar.pack(side=tk.BOTTOM)
+        show_toolbar=True
 
 def hide_statusbar():
     pass
