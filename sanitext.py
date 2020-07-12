@@ -419,9 +419,20 @@ edit.add_command(label ="Clear All", image=clear_all_icon, compound=tk.LEFT, acc
 edit.add_command(label ="Find", image=find_icon, compound=tk.LEFT, accelerator = 'Ctrl+F', command = find_func)
 
 ## view check buttons
-view.add_checkbutton(label='Tool Bar', image = tool_bar_icon, compound=tk.LEFT)
-view.add_checkbutton(label='Status Bar', image = status_bar_icon, compound=tk.LEFT)
 
+show_statusbar = tk.BooleanVar()
+show_statusbar.set(True)
+show_toolbar = tk.BooleanVar()
+show_toolbar.set(True)
+
+def hide_toolbar():
+    pass
+
+def hide_statusbar():
+    pass
+
+view.add_checkbutton(label='Tool Bar', onvalue = True, offvalue = 0, variable = show_toolbar, image = tool_bar_icon, compound=tk.LEFT, command=hide_toolbar)
+view.add_checkbutton(label='Status Bar', onvalue=1, offvalue=False, variable = show_statusbar, image = status_bar_icon, compound=tk.LEFT, command=hide_statusbar)
 ##color theme
 
 count = 0
