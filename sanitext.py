@@ -342,7 +342,26 @@ def exit_func(event=None):
 
 ############## find functionality ###########
 
-def find_func(event = None):
+def find_func(event=None):
+
+    def find():
+        word = find_input.get()
+        text_editor.tag_remove('match', '1.0', tk.END)
+        matches = 0
+        if word:
+            start_pos = '1.0'
+            while True:
+                start_pos = text_editor.search(word, start_pos, stopindex=tk.END)
+                if not start_pos:
+                    break 
+                end_pos = f'{start_pos}+{len(word)}c'
+                text_editor.tag_add('match', start_pos, end_pos)
+                matches += 1
+                start_pos = end_pos
+                text_editor.tag_config('match', foreground='white', background='blue')
+    def replace():
+        pass
+
     find_dialogue = tk.Toplevel()
     find_dialogue.geometry = ('450X250+500+200')
     find_dialogue.title('Find')
@@ -361,8 +380,8 @@ def find_func(event = None):
     replace_input = ttk.Entry(find_frame, width=30)
 
     ## button
-    find_button = ttk.Button(find_frame, text='Find')
-    replace_button = ttk.Button(find_frame, text='Replace')
+    find_button = ttk.Button(find_frame, text='Find', command=find)
+    replace_button = ttk.Button(find_frame, text='Replace', command = replace)
 
     ##label grid
     text_find_label.grid(row=0, column=0, padx=4, pady=4)
