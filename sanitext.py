@@ -360,7 +360,12 @@ def find_func(event=None):
                 start_pos = end_pos
                 text_editor.tag_config('match', foreground='white', background='blue')
     def replace():
-        pass
+        word = find_input.get()
+        replace_text = replace_input.get()
+        content = text_editor.get(1.0, tk.END)
+        new_content = content.replace(word, replace_text)
+        text_editor.delete(1.0, tk.END)
+        text_editor.insert(1.0, new_content)
 
     find_dialogue = tk.Toplevel()
     find_dialogue.geometry = ('450X250+500+200')
