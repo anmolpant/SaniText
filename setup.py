@@ -9,7 +9,7 @@ if sys.platform == 'win32':
 os.environ['TCL_LIBRARY'] = r"C:\Users\anmol\AppData\Local\Programs\Python\Python37-32\tcl\tcl8.6"
 os.environ['TK_LIBRARY'] = r"C:\Users\anmol\AppData\Local\Programs\Python\Python37-32\tcl\tk8.6"
 
-executables = [cx_Freeze.Executable("vpad.py", base=base, icon="icon.ico")]
+executables = [cx_Freeze.Executable("sanitext.py", base=base, icon="icon.ico")]
 
 
 cx_Freeze.setup(
