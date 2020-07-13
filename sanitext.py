@@ -11,7 +11,7 @@ import os
 main_application = tk.Tk()
 main_application.geometry('1200x800')
 main_application.title('SaniText Text Editor')
-
+main_application.wm_iconbitmap('icon.ico')
 
 
 ###################################### main menu ########################################
