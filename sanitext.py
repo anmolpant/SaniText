@@ -433,16 +433,23 @@ def hide_toolbar():
     else:
         text_editor.pack_forget()
         status_bar.pack_forget()
-        tool_bar.pack(side=TK.TOP, fill = tk.X)
+        tool_bar.pack(side=tk.TOP, fill = tk.X)
         text_editor.pack(fill=tk.BOTH, expand=True)
         status_bar.pack(side=tk.BOTTOM)
         show_toolbar=True
 
 def hide_statusbar():
-    pass
+    global show_statusbar
+    if show_statusbar:
+        status_bar.pack_forget()
+        show_statusbar = False
+    else:
+        status_bar.pack(side=tk.BOTTOM)
+        show_statusbar=True
 
 view.add_checkbutton(label='Tool Bar', onvalue = True, offvalue = 0, variable = show_toolbar, image = tool_bar_icon, compound=tk.LEFT, command=hide_toolbar)
 view.add_checkbutton(label='Status Bar', onvalue=1, offvalue=False, variable = show_statusbar, image = status_bar_icon, compound=tk.LEFT, command=hide_statusbar)
+
 ##color theme
 
 count = 0
