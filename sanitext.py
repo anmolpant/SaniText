@@ -1,3 +1,8 @@
+"""
+SaniText Text Editor Software
+        ---Copyright © 2020 Anmol Pant
+    
+"""
 import tkinter as tk
 from tkinter import ttk
 from tkinter import font, colorchooser, filedialog, messagebox
