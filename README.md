@@ -5,7 +5,7 @@
 </div>
 
 <br>
-SaniText is a full fledged text editing software developed in python using the tkinter framework for the GUI. Deriving it's name from the 'new normal' version of 'clean text', Sanitext boasts of an interactive window where users can enter text, change text style, color and properties, create, save and edit files, in this one of a kind, all in one, versatile text editoring software. The text editor also houses six diverse color themes and hence incorporates all the functionalities a basic text editor should have and even outperforms them by taking it up a notch incorporating features like find and replace, text alignments and customizable text and background colors according to the preference of the user.
+SaniText is a full fledged text editing software developed in python using the tkinter framework for the GUI. Deriving it's name from the 'new normal' version of 'clean text', Sanitext boasts of an interactive window where users can enter text, change text style, color and properties, create, save and edit files, in this one of a kind, all in one, versatile text editing software. The text editor also houses six diverse color themes and hence incorporates all the functionalities a basic text editor should have and even outperforms them by taking it up a notch, by incorporating features like find and replace, text alignments and customizable text and background colors according to the preference of the user.
 
 ## Getting Started
 
